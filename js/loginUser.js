@@ -13,8 +13,7 @@ export async function loginUser(url, userData) {
         const response = await fetch(url, postData);
         console.log(response);
         const json = await response.json();
-        console.log(json);
-        
+        console.log(json.data);  
         const accessToken = json.data.accessToken;
         localStorage.setItem("accessToken", accessToken);
         console.log(accessToken);

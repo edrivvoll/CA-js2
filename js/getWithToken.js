@@ -7,8 +7,7 @@ export async function getWithToken(url) {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-                "X-Noroff-API-Key": apiKey.data.key,
+                Authorization: `Bearer ${token}`,                
             },
         };
         const response = await fetch(url, fetchOptions);
