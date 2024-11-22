@@ -1,40 +1,30 @@
+import { registerUser } from "./registerUser.js";
+import { regUrl } from "./url.js";
+
+const regBtn = document.getElementById('register-submit');
+const form = document.getElementById('form');
+let userName = document.getElementById('name');
+let userEmail = document.getElementById('email');
+let userPassword = document.getElementById('password');
 
 
-
-// const BASE_URL = "https://v2.api.noroff.dev";
-// const BASE_URL = "https://api.noroff.dev/api/v1";
-
-
-// const regURL ="/auth/register";
-// const regURL ="/social/auth/register";
-
-//--------------------Register user
-
-export async function registerUser(url, userData) {
-    try {
-        const postData = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(userData)
-        }
-        const response = await fetch(url, postData);
-        console.log(response);
-        const json = await response.json();
-        console.log(json);
-    } catch (error) {
-        console.log(error);
+regBtn.onclick = function() {
+    userName = document.getElementById('name').value;
+    userEmail = document.getElementById('email').value;
+    userPassword = document.getElementById('password').value;
+    
+    const userToRegister = {
+        name: `${userName}`, 
+        email: `${userEmail}`, 
+        password: `${userPassword}`
     }
+
+    console.log(userToRegister);
+
+    registerUser(regUrl, userToRegister)
+
+    console.log(userName);
+    console.log(userEmail);
+    console.log(userPassword);
 }
-
-/* const userToRegister = {
-    name: "sdweghname", 
-    email: "qqfirst.last@noroff.no", 
-    password: "eUzI1NiIsInR5cCI"
-} */
-
-// const registerURL = BASE_URL + regURL;
-
-// registerUser(registerURL, userToRegister);
 

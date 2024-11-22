@@ -13,7 +13,7 @@
     <script
       src="https://kit.fontawesome.com/5e248e42c9.js"
       crossorigin="anonymous"></script>
-      <script src="js/main.js" type="module"></script>
+      <script src="js/register.js" type="module"></script>
   </head>
   <body>
     <header class="fixed-top">
@@ -64,7 +64,7 @@
         <div class="row">
           <div class="col-md-6 offset-md-3">
             <div class="card my-5 shadow-lg rounded-4">
-              <form class="card-body cardbody-color p-lg-5 shadow-lg rounded-4" action="/profile/">
+              <form class="card-body cardbody-color p-lg-5 shadow-lg rounded-4" action="/index.html">
                 <div class="text-center">
                   <img
                     src="/img/profile.jpg"
@@ -72,7 +72,12 @@
                     width="200px"
                     alt="profile" />
                 </div>
-
+                <div class="mb-3">
+                    <input type="name"class="form-control" id="name" required />
+                    <label for="name" class="form-label"
+                      >Name</label
+                    >
+                  </div>
                 <div class="mb-3">
                   <input type="email"class="form-control" id="email" required />
                   <label for="email" class="form-label"
@@ -89,15 +94,15 @@
                   <label class="form-label" for="form2Example2">Password</label>
                 </div>
                 <div class="text-center">
-                  <button type="submit" id="login-btn" class="btn btn-color px-5 mb-5 w-100">
-                    Login
+                  <button type="submit" id="register-submit" class="btn btn-color px-5 mb-5 w-100">
+                    Register
                   </button>
                 </div>
                 <div
                   id="emailHelp"
                   class="form-text text-center mb-5 text-dark">
-                  Not Registered?
-                  <a href="/register.html" class="text-dark fw-bold"> Create an Account</a>
+                  Already have an account?
+                  <a href="/index.html" class="text-dark fw-bold"> Login</a>
                 </div>
               </form>
             </div>

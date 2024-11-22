@@ -1,4 +1,7 @@
 //--------------------- Login------------
+export function save(key, value) {
+    localStorage.setItem(key, JSON.stringify(value));
+}
 
 export async function loginUser(url, userData) {
     try {
@@ -15,8 +18,10 @@ export async function loginUser(url, userData) {
         const json = await response.json();
         console.log(json.data);  
         const accessToken = json.data.accessToken;
-        localStorage.setItem("accessToken", accessToken);
-        console.log(accessToken);
+        const profile = json.data;
+        save("accessToken", accessToken);
+        save("profile", profile);
+        
     } catch (error) {
         console.log(error);
     }
