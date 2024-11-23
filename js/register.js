@@ -9,6 +9,7 @@ let userPassword = document.getElementById('password');
 
 
 regBtn.onclick = function() {
+    form.preventDefault();
     userName = document.getElementById('name').value;
     userEmail = document.getElementById('email').value;
     userPassword = document.getElementById('password').value;

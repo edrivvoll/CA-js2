@@ -1,7 +1,7 @@
 import { userToRegister } from "./userToRegister.js";
 import { registerUser } from "./registerUser.js";
 import { apiKeyUrl, getPostsURL, loginUrl, regUrl } from "./url.js";
-import { loginUser } from "./loginUser.js";
+// import { loginUser } from "./loginUser.js";
 import { userToLogin } from "./userToLogin.js";
 import { getWithToken } from "./getWithToken.js";
 import { getAPIKey } from "./getAPIKey.js";
@@ -15,12 +15,14 @@ import { getAPIKey } from "./getAPIKey.js";
 
 // getAPIKey(apiKeyUrl).then(console.log);
 
-/* let userEmail;
+let userEmail;
 let userPassword;
 
+const form = document.getElementById('form');
 const loginBtn = document.getElementById('login-btn');
 
 loginBtn.onclick = function() {
+    form.preventDefault();
     userEmail = document.getElementById('email').value;
     userPassword = document.getElementById('password').value;
 
@@ -32,6 +34,6 @@ loginBtn.onclick = function() {
     }
 
     loginUser(loginUrl, userToLogin);
-} */
+}
 
-    loginUser(loginUrl, userToLogin);
+ //   loginUser(loginUrl, userToLogin);

@@ -13,7 +13,7 @@
     <script
       src="https://kit.fontawesome.com/5e248e42c9.js"
       crossorigin="anonymous"></script>
-      <script src="js/register.js" type="module"></script>
+      <script src="js/test.js" type="module" defer></script>
   </head>
   <body>
     <header class="fixed-top">
@@ -64,7 +64,7 @@
         <div class="row">
           <div class="col-md-6 offset-md-3">
             <div class="card my-5 shadow-lg rounded-4">
-              <form class="card-body cardbody-color p-lg-5 shadow-lg rounded-4" action="/index.html">
+              <form class="card-body cardbody-color p-lg-5 shadow-lg rounded-4" name="auth" >
                 <div class="text-center">
                   <img
                     src="/img/profile.jpg"
@@ -73,30 +73,44 @@
                     alt="profile" />
                 </div>
                 <div class="mb-3">
-                    <input type="name"class="form-control" id="name" required />
-                    <label for="name" class="form-label"
-                      >Name</label
-                    >
+                    <label for="name">Name (for Register)</label>
+                    <input 
+                      type="text"
+                      class="form-control" 
+                      id="name"  
+                      name="name" 
+                      placeholder="Enter your name" 
+                      />
                   </div>
                 <div class="mb-3">
-                  <input type="email"class="form-control" id="email" required />
-                  <label for="email" class="form-label"
-                    >Email address</label
-                  >
+                  <label for="email">Email</label>
+                  <input 
+                    type="email"
+                    class="form-control" 
+                    id="email" 
+                    name="email"
+                    placeholder="Enter your email"
+                    required />                  
                 </div>
                 <div class="mb-3">
+                  <label for="password">Password</label>
                   <input
                     type="password"
                     id="password"
                     class="form-control"
+                    name="password"
+                    placeholder="Enter your password"
                     required
-                    minlength="8" />
-                  <label class="form-label" for="form2Example2">Password</label>
+                    minlength="8" />                  
                 </div>
                 <div class="text-center">
-                  <button type="submit" id="register-submit" class="btn btn-color px-5 mb-5 w-100">
+                  <button type="submit" class="login" data-auth="login">Login</button>
+                  <button type="submit" class="register" data-auth="register">Register</button>
+
+
+                  <!-- <button type="submit" id="register-submit" class="btn btn-color px-5 mb-5 w-100">
                     Register
-                  </button>
+                  </button> -->
                 </div>
                 <div
                   id="emailHelp"
