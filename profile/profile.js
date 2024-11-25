@@ -1,3 +1,5 @@
+import { logOut } from "../js/logOut.js";
+import { goToCreatePost } from "../js/goToCreatePost.js";
 
 export const apiBase = 'https://v2.api.noroff.dev';
 export const apiAuth = '/auth';
@@ -80,6 +82,11 @@ export async function renderPosts() {
 }
 
 renderPosts();
+
+logOut();
+goToCreatePost();
+
+
 
 console.log('testfdgerg');
 

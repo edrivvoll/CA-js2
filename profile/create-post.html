@@ -13,7 +13,7 @@
     <script
       src="https://kit.fontawesome.com/5e248e42c9.js"
       crossorigin="anonymous"></script>
-      <script src="/profile/profile.js" type="module"></script>
+      <script src="../js/createPost.js" type="module"></script>
   </head>
   <body>
     <header>
@@ -87,7 +87,7 @@
                       </div>
                     </div>
                     <div class="d-flex pt-1">
-                      <button type="button" id="go-to-create-post" class="btn btn-outline-primary me-1 flex-grow-1">Create Post</button>
+                      <button type="button" id="create-post" class="btn btn-outline-primary me-1 flex-grow-1">Create Post</button>
                       <button type="button" class="btn btn-primary flex-grow-1">Follow</button>
                     </div>
                   </div>
@@ -107,7 +107,28 @@
                   
                   <div class="container p-4">
                     <h2>Recent posts:</h2>
-                    <div class="row post-container" id="post-container">
+                    <div class="row post-container">
+                        <h1>Create a Post</h1>
+                        <form id="createPostForm">
+                            <!-- Title -->
+                            <label for="title">Title: </label>
+                            <input type="text" id="title" name="title" placeholder="Enter the post title" required>
+                            <br>
+                            <!-- Body -->
+                            <label for="body">Body: </label>
+                            <textarea id="body" name="body" rows="5" placeholder="Enter the post body"></textarea>
+                            <br>
+                            <!-- Media URL -->
+                            <label for="mediaUrl">Media URL: </label>
+                            <input type="url" id="media-url" name="mediaUrl" placeholder="Enter the media URL">
+                            <br>
+                            <!-- Media Alt Text -->
+                            <label for="mediaAlt">Media Alt Text: </label>
+                            <input type="text" id="media-alt" name="mediaAlt" placeholder="Enter alt text for the media">
+                            <br>
+                            <!-- Submit Button -->
+                            <button type="submit" id="create-post">Create Post</button>
+                        </form>
                       <!-- <div class="col-md-6 col-sm-6 col-xl-4">
                         <div class="card mb-4">
                           <i class="bi bi-1-circle card-img-top p-4"></i>
