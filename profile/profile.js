@@ -41,7 +41,6 @@ export async function renderPosts() {
     
 
    postArray.forEach(i => {
-        console.log()
         if (i.media === null) {
         postContainer.innerHTML += `
             
@@ -87,8 +86,6 @@ logOut();
 goToCreatePost();
 
 
-
-console.log('testfdgerg');
 
 /* const posts = await getPosts();
 console.log(posts); */

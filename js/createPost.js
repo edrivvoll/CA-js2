@@ -9,69 +9,59 @@ export function load(key) {
     return JSON.parse(localStorage.getItem(key));
 }
 
-
 export async function createPost() {
-    //
-    
-
     const token = load('token');
     if (!token) throw new Error('No authorization token found');
 
-    const title = document.getElementById('title');
-    const body = document.getElementById('body');
-    const mediaUrl = document.getElementById('media-url');
-    const mediaAlt = document.getElementById('media-alt');
-    
-    let dataSet = {
-        'title': title,
-        'body': body,
-        'media': {
-            'url': mediaUrl,
-            'alt': mediaAlt,
+    const title = document.getElementById('title').value;
+    const body = document.getElementById('body').value;
+    const mediaUrl = document.getElementById('media-url').value;
+    const mediaAlt = document.getElementById('media-alt').value;
+
+    const dataSet = {
+        title,
+        body,
+        ...(mediaUrl && mediaAlt && { media: { url: mediaUrl, alt: mediaAlt } }),
+    };
+
+    try {
+        const response = await fetch(`${apiBase}${apiPosts}`, {
+            method: 'POST',
+            body: JSON.stringify(dataSet),
+            headers: {
+                'Content-type': 'application/json',
+                Authorization: `Bearer ${token}`,
+                'X-Noroff-API-Key': apiKey,
+            },
+        });
+
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.message || 'Could not create post');
         }
+
+        return await response.json();
+    } catch (error) {
+        console.error('Error creating post:', error.message);
+        throw error;
     }
-
-    const response = await fetch(`${apiBase}${apiPosts}`, {
-        method: 'POST',
-        body: JSON.stringify(dataSet),        
-        headers: {
-            'Content-type': 'application/json',
-            Authorization: `Bearer ${token}`,
-            "X-Noroff-API-Key": `${apiKey}`,
-        }        
-    });
-
-    if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error.message || 'Could not fetch posts');
-    }
-
-    return await response.json();
-
 }
 
-/* export function logOut() {
-    const logOutBtn = document.getElementById('logout');
-    
-    if (logOutBtn) {
-        logOutBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            localStorage.clear();
-            window.location.replace('../index.html');
-        });
-    } else {
-        console.error('Logout button not found!');
-    }
-} */
-
-
-
-const createBtn = document.getElementById('create-post');
+export function loadPost() {
+    const createBtn = document.getElementById('create-post');
 
     if (createBtn) {
-        createBtn.addEventListener('click', function (e) {
+        createBtn.addEventListener('click', async function (e) {
             e.preventDefault();
-            // createPost();
-            console.log(title)
-        })
+            try {
+                const response = await createPost();
+                console.log('Post created successfully:', response);
+            } catch (error) {
+                console.error('Failed to create post:', error.message);
+            }
+        });
     }
+}
+
+
+loadPost();
