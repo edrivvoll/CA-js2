@@ -50,7 +50,7 @@ export async function renderPosts() {
                         <div class="card-body">
                             <h5 class="card-title">${i.title}</h5>
                             <p class="card-text">${i.body}</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="/profile/singlepost.html?id=${i.id}" class="btn btn-primary">View Post</a>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@ export async function renderPosts() {
                 <div class="card-body">
                     <h5 class="card-title">${i.title}</h5>
                     <p class="card-text">${i.body}</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="/profile/singlepost.html?id=${i.id}" class="btn btn-primary">View Post</a>
                 </div>
             </div>
         </div>
