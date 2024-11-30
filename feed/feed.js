@@ -1,7 +1,7 @@
 import { logOut } from "../js/logOut.js";
-import { renderPosts } from "../profile/profile.js";
+import { renderPostsWithLoop } from "../js/renderPostsWithLoop.js";
 
 
-renderPosts();
+renderPostsWithLoop();
 
 logOut();

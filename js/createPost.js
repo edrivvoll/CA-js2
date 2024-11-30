@@ -56,6 +56,8 @@ export function loadPost() {
             try {
                 const response = await createPost();
                 console.log('Post created successfully:', response);
+                alert('Post created successfully');
+                window.location.replace('/feed/index.html')
             } catch (error) {
                 console.error('Failed to create post:', error.message);
             }

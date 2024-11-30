@@ -7,7 +7,7 @@ export async function renderPostsSingle() {
     
     const container = document.querySelector('#signgle-post-container');
     container.innerHTML = '';
-
+    
     if (postArray.media === null) {
         container.innerHTML = `                
             <div class="col-md-6 col-sm-6 col-xl-4">

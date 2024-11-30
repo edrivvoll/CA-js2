@@ -1,6 +1,9 @@
 import { logOut } from "../js/logOut.js";
 import { renderPostsSingle } from "../js/renderPostsSingle.js";
 
+export function getID(){
+    
+}
 const querryString = document.location.search;
 console.log(querryString);
 

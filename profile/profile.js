@@ -10,7 +10,6 @@ logOut();
 goToCreatePost();
 
 
-
 /* const posts = await getPosts();
 console.log(posts); */
 
