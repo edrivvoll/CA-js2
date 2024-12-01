@@ -25,7 +25,7 @@ export async function renderPostsSingle() {
         container.innerHTML = `                
             <div class="col-md-6 col-sm-6 col-xl-4">
                 <div class="card mb-4">
-                    <img src="${postArray.media.url}" alt="${postArray.media.alt}">
+                    <img class="img" src="${postArray.media.url}" alt="${postArray.media.alt}">
                     <div class="card-body">
                         <h5 class="card-title">${postArray.title}</h5>
                         <p class="card-text">${postArray.body}</p>
