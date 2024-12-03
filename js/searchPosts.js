@@ -2,9 +2,10 @@ export function searchPosts() {
 
     document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
-    const extraSearchInput = document.getElementById('search-input2');
+    let extraSearchInput = document.getElementById('search-input2');
     const allContainers = document.querySelectorAll('#post-container'); // All containers with cards
     // console.log(allContainers, searchInput.value)
+    const location = (window.location.pathname === '/feed/')
     
     // Event listener for filtering cards across all containers
     searchInput.addEventListener('input', () => {
@@ -28,7 +29,8 @@ export function searchPosts() {
       });
     });
 
-    extraSearchInput.addEventListener('input', () => {
+    if (location) {
+      extraSearchInput.addEventListener('input', () => {
         const filter = extraSearchInput.value.toLowerCase();
         // console.log(filter)
     
@@ -48,6 +50,8 @@ export function searchPosts() {
           }
         });
       });
+    }
+    
 
     // Prevent default form submission
     const form = document.querySelector('form');
