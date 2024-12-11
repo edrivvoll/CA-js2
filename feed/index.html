@@ -14,6 +14,7 @@
       src="https://kit.fontawesome.com/5e248e42c9.js"
       crossorigin="anonymous"></script>
       <script src="/feed/feed.js" type="module"></script>
+      
   </head>
   <body>
     <header>
@@ -89,6 +90,37 @@
             </div>    
           </div>
         </div>
+        <!-- Create post section -->
+        <div class="container py-3">
+          <H2>Create post:</H2>
+          <form id="createPostForm">    		    
+    		    <div class="form-group">
+    		        <label for="title">Title <span class="require">*</span></label>
+    		        <input type="text" id="title" name="title" class="form-control" name="title" />
+    		    </div>    		    
+    		    <div class="form-group">
+    		        <label for="description">Description</label>
+    		        <textarea id="body" name="body" rows="5" class="form-control" name="description" ></textarea>
+    		    </div>
+            <div class="form-group">
+              <label for="title">Media URL </label>
+              <input type="url" id="media-url" name="mediaUrl" class="form-control" name="title" />
+            </div>
+            <div class="form-group">
+              <label for="title">Media Alt Text </label>
+              <input type="text" id="media-alt" name="mediaAlt" class="form-control" name="title" />
+            </div>    		    
+    		    <div class="form-group">
+    		        <p><span class="require">*</span> = required fields</p>
+    		    </div>    		    
+    		    <div class="form-group">
+    		        <button type="submit" id="create-post" class="btn btn-primary">
+    		            Create
+    		        </button>
+    		    </div>
+    		    
+    		  </form>
+        </div>
         <!-- Posts section -->
         <div class="container p-4">
           <h2>Recent posts:</h2>
@@ -154,32 +186,7 @@
               </div>
             </div> -->
         </div>
-        <!-- Create post section -->
-        <div class="container py-3">
-          <H2>Create post:</H2>
-          <form action="" method="POST">    		    
-    		    <div class="form-group">
-    		        <label for="title">Title <span class="require">*</span></label>
-    		        <input type="text" class="form-control" name="title" />
-    		    </div>    		    
-    		    <div class="form-group">
-    		        <label for="description">Description</label>
-    		        <textarea rows="5" class="form-control" name="description" ></textarea>
-    		    </div>    		    
-    		    <div class="form-group">
-    		        <p><span class="require">*</span> = required fields</p>
-    		    </div>    		    
-    		    <div class="form-group">
-    		        <button type="submit" class="btn btn-primary">
-    		            Create
-    		        </button>
-    		        <button class="btn btn-default">
-    		            Cancel
-    		        </button>
-    		    </div>
-    		    
-    		  </form>
-        </div>
+        
     </main>
     <footer class="bg-primary primary-color d-flex fixed-bottom justify-content-center p-3 ">&copy;Copyright 2024</footer>
   </body>
