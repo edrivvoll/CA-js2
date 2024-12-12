@@ -14,7 +14,7 @@ const option = {
     }
 }
 
-export async function renderSearch(searchInput) {
+export async function renderSearchProfile(searchInput) {
 
     const url = `${apiBase}${apiPosts}/search?q=${searchInput}&_author=true`;
     console.log(url)
@@ -25,6 +25,7 @@ export async function renderSearch(searchInput) {
         const postArray = posts.data;
         const userEmail = load('useremail');
         console.log(postArray)
+             
         
         const filteredPostArray = postArray.filter((array) => {
             if (array.author.email === userEmail) {
@@ -32,7 +33,10 @@ export async function renderSearch(searchInput) {
             }   else  {
                 return false;
             }
-        })
+        }) 
+        
+       
+
 
         // Clear the container
         postContainer.innerHTML = '';
