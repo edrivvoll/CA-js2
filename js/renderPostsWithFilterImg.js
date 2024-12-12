@@ -2,34 +2,25 @@ import { deletePost } from "./deletePost.js";
 import { getPosts } from "./getPosts.js";
 import { load } from "./load.js";
 
-export async function renderPostsWithLoop() {
+export async function renderPostsWithFilterImg() {
     const posts = await getPosts();
     const postContainer = document.getElementById('post-container');
     const postArray = posts.data;
-    console.log(postArray);
-    const userEmail = load('useremail');
-// ----------------
 
-/*     const filteredPostArray = postArray.filter((array) => {
-        if (array.author.email === userEmail) {
-            return true;
-        }   else  {
+    const filteredPostArray = postArray.filter((array) => {
+        if (array.media === null) {
             return false;
+        }   else  {
+            return true;
         }
     })
-    console.log(filteredPostArray) */
-
-// ----------------
-
-
-
 
     // Clear the container
     postContainer.innerHTML = '';
 
-    postArray.forEach((i) => {
+    filteredPostArray.forEach((i) => {
         const authorEmail = i.author.email;
-        
+        const userEmail = load('useremail');
         const isAuthor = authorEmail === userEmail;
 
         // Create card elements
@@ -78,3 +69,4 @@ export async function renderPostsWithLoop() {
         }
     });
 }
+
