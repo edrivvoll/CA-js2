@@ -8,19 +8,6 @@ export async function renderPostsWithLoop() {
     const postArray = posts.data;
     console.log(postArray);
     const userEmail = load('useremail');
-// ----------------
-
-/*     const filteredPostArray = postArray.filter((array) => {
-        if (array.author.email === userEmail) {
-            return true;
-        }   else  {
-            return false;
-        }
-    })
-    console.log(filteredPostArray) */
-
-// ----------------
-
 
 
 
@@ -59,7 +46,6 @@ export async function renderPostsWithLoop() {
             buttonEdit.textContent = 'Edit Post';
             buttonEdit.className = 'btn btn-primary';
             buttonEdit.addEventListener('click', () => {
-            //    alert('Edit Button clicked!');
                 window.location.replace(`/profile/edit-post.html?id=${i.id}`);
             });
             const buttonDelete = document.createElement('button');

@@ -1,21 +1,29 @@
 import { logOut } from "../js/logOut.js";
 import { goToCreatePost } from "../js/goToCreatePost.js";
-import { renderPostsWithLoop } from "../js/renderPostsWithLoop.js";
 import { searchPosts } from "../js/searchPosts.js";
-import { apiAuthor, apiBase, apiKey, apiPosts } from "../js/url.js";
+import { apiBase, apiKey, apiPosts } from "../js/url.js";
 import { load } from "../js/load.js";
 import { apiCall } from "../js/apiCall.js";
+import { renderPostsWithFilterMyPosts } from "../js/renderPostsWithFilterMyPosts.js"
+import { renderSearch } from "../js/searchPostsV2.js";
+/* import { renderPostsWithFilterMyPostsV2 } from "../js/searchPostsV2.js";
+ */
 
+ renderPostsWithFilterMyPosts();
 
-renderPostsWithLoop();
 
 logOut();
 
 goToCreatePost();
 
-searchPosts();
-/* const posts = await getPosts();
-console.log(posts); */
+// searchPosts();
+
+const searchBtn = document.getElementById('search-btn');
+const searchInput = document.querySelector('#search-input');
+let searchKey = '';
+
+
+
 const token = load('token');
 const option = {
     headers: {
@@ -24,8 +32,23 @@ const option = {
         "X-Noroff-API-Key": `${apiKey}`,
     }
 }
-const url = apiBase + apiPosts + '?_tag=test';
+const url = `${apiBase}${apiPosts}?_tag=${searchKey}`;
 
 console.log(option, url)
 
 apiCall(url, option);
+
+searchBtn.addEventListener('click', (e) => {
+    e.preventDefault(); 
+    console.log(searchInput.value);
+    const searchUrl = url + searchInput.value;
+    if (searchInput.value === '') {
+        renderPostsWithFilterMyPosts();
+    }   else {
+        renderSearch(searchInput.value);
+    }
+    
+});
+
+// renderPostsWithFilterMyPostsV2();
+

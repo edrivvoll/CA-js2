@@ -50,7 +50,6 @@ export async function renderPostsWithFilterImg() {
             buttonEdit.textContent = 'Edit Post';
             buttonEdit.className = 'btn btn-primary';
             buttonEdit.addEventListener('click', () => {
-            //    alert('Edit Button clicked!');
                 window.location.replace(`/profile/edit-post.html?id=${i.id}`);
             });
             const buttonDelete = document.createElement('button');
