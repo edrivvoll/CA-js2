@@ -16,7 +16,7 @@ export async function renderPostsSingle() {
                     <div class="card-body">
                         <h5 class="card-title">${postArray.title}</h5>
                         <p class="card-text">${postArray.body}</p>
-                        <a href="#" class="btn btn-primary">View Post</a>
+                        <a href="../feed/" class="btn btn-primary">Back</a>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@ export async function renderPostsSingle() {
                     <div class="card-body">
                         <h5 class="card-title">${postArray.title}</h5>
                         <p class="card-text">${postArray.body}</p>
-                        <a href="#" class="btn btn-primary">View Post</a>
+                        <a href="../feed/" class="btn btn-primary">Back</a>
                     </div>
                 </div>
             </div>
