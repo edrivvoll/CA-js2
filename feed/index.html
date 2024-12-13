@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Feed</title>
+    <title>Feed | SoMe</title>
     <link rel="stylesheet" href="../src/scss/index.css" />
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
@@ -13,12 +13,13 @@
     <script
       src="https://kit.fontawesome.com/5e248e42c9.js"
       crossorigin="anonymous"></script>
+      <script src="/feed/feed.js" type="module"></script>
   </head>
   <body>
     <header>
       <nav class="navbar navbar-expand-lg bg-primary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="../index.html">'Sitename'</a>
+          <a class="navbar-brand" href="../index.html">SoMe</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -40,17 +41,17 @@
                 <a class="nav-link active" aria-current="page" href="/feed/">Feed</a>
               </li>
               <li class="nav-item"></li>
-                <a class="nav-link" href="/index.html">Log Out</a>
+                <button type="submit" id="logout">Log Out</button>
               </li>
             </ul>
-
             <form class="d-flex" role="search">
               <input
+                id="search-input"
                 class="form-control me-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search" />
-              <button class="btn btn-outline-success" type="submit">
+              <button class="btn btn-outline-success" type="submit" id="search-btn">
                 Search
               </button>
             </form>
@@ -64,118 +65,62 @@
             <div class="col col-sm-10 col-md-8 col-lg-6 col-xl-5">
               <form class="d-flex" role="search">
                   <input
+                  id="search-input2"
                   class="form-control me-2"
                   type="search"
                   placeholder="Search"
                   aria-label="Search" />
-                  <button class="btn btn-primary" type="submit">
+                  <button class="btn btn-primary" type="submit" id="search-btn2">
                   Search
                   </button>
                   <div class="dropdown"></div>
-                  <button class="btn btn-secondary dropdown-toggle mx-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Sort by:
+                  <button class="btn btn-secondary dropdown-toggle mx-2" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                    Filter:
                   </button>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Relevance</a></li>
-                    <li><a class="dropdown-item" href="#">Date</a></li>
-                    <li><a class="dropdown-item" href="#">Name</a></li>
-                    <li><a class="dropdown-item" href="#">Comments</a></li>
+                    <li><a class="dropdown-item" id="no-filter" href="#">No Filter</a></li>
+                    <li><a class="dropdown-item" id="img" href="#">With image</a></li>
+                    <li><a class="dropdown-item" id="my-posts" href="#">My Posts</a></li>                                      
                   </ul>
                 </div>
               </form>   
             </div>    
           </div>
         </div>
-        <!-- Posts section -->
-        <div class="container p-4">
-          <h2>Recent posts:</h2>
-          <div class="row">
-            <div class="col-md-4 col-sm-6">
-              <div class="card mb-4">
-                <i class="bi bi-1-circle card-img-top p-4"></i>
-                <div class="card-body">
-                  <h5 class="card-title">Post 1</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-              <div class="card mb-4">
-                <i class="bi bi-2-circle card-img-top p-4"></i>
-                <div class="card-body">
-                  <h5 class="card-title">Post 2</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-              <div class="card mb-4">
-                <i class="bi bi-3-circle card-img-top p-4"></i>
-                <div class="card-body">
-                  <h5 class="card-title">Post 3</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-              <div class="card mb-4">
-                <i class="bi bi-4-circle card-img-top p-4"></i>
-                <div class="card-body">
-                  <h5 class="card-title">Post 4</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-              <div class="card mb-4">
-                <i class="bi bi-5-circle card-img-top p-4"></i>
-                <div class="card-body">
-                  <h5 class="card-title">Post 5</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-              <div class="card mb-4">
-                <i class="bi bi-6-circle card-img-top p-4"></i>
-                <div class="card-body">
-                  <h5 class="card-title">Post 6</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-        </div>
         <!-- Create post section -->
         <div class="container py-3">
           <H2>Create post:</H2>
-          <form action="" method="POST">    		    
+          <form id="createPostForm">    		    
     		    <div class="form-group">
     		        <label for="title">Title <span class="require">*</span></label>
-    		        <input type="text" class="form-control" name="title" />
+    		        <input type="text" id="title" name="title" class="form-control" name="title" />
     		    </div>    		    
     		    <div class="form-group">
     		        <label for="description">Description</label>
-    		        <textarea rows="5" class="form-control" name="description" ></textarea>
-    		    </div>    		    
+    		        <textarea id="body" name="body" rows="5" class="form-control" name="description" ></textarea>
+    		    </div>
+            <div class="form-group">
+              <label for="title">Media URL </label>
+              <input type="url" id="media-url" name="mediaUrl" class="form-control" name="title" />
+            </div>
+            <div class="form-group">
+              <label for="title">Media Alt Text </label>
+              <input type="text" id="media-alt" name="mediaAlt" class="form-control" name="title" />
+            </div>    		    
     		    <div class="form-group">
     		        <p><span class="require">*</span> = required fields</p>
     		    </div>    		    
     		    <div class="form-group">
-    		        <button type="submit" class="btn btn-primary">
+    		        <button type="submit" id="create-post" class="btn btn-primary">
     		            Create
     		        </button>
-    		        <button class="btn btn-default">
-    		            Cancel
-    		        </button>
     		    </div>
-    		    
     		  </form>
+        </div>
+        <!-- Posts section -->
+        <div class="container p-4">
+          <h2>Recent posts:</h2>
+          <div class="row" id="post-container">
         </div>
     </main>
     <footer class="bg-primary primary-color d-flex fixed-bottom justify-content-center p-3 ">&copy;Copyright 2024</footer>
