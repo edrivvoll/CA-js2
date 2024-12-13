@@ -13,13 +13,13 @@
     <script
       src="https://kit.fontawesome.com/5e248e42c9.js"
       crossorigin="anonymous"></script>
-      <script src="js/login/test.js" type="module" defer></script>
+    <script src="js/login/main.js" type="module" defer></script>
   </head>
   <body>
     <header class="fixed-top">
       <nav class="navbar navbar-expand-lg bg-primary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">'Sitename'</a>
+          <a class="navbar-brand" href="/index.html">'Sitename'</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -31,30 +31,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/profile/"
-                  >Profile</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/feed/">Feed</a>
-              </li>
-              <li class="nav-item"></li>
-                <a class="nav-link" href="/index.html">Log Out</a>
-              </li>
-            </ul>
-
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search" />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
           </div>
         </div>
       </nav>
@@ -64,7 +41,9 @@
         <div class="row">
           <div class="col-md-6 offset-md-3">
             <div class="card my-5 shadow-lg rounded-4">
-              <form class="card-body cardbody-color p-lg-5 shadow-lg rounded-4" name="auth" >
+              <form
+                class="card-body cardbody-color p-lg-5 shadow-lg rounded-4"
+                name="auth">
                 <div class="text-center">
                   <img
                     src="/img/profile.jpg"
@@ -73,26 +52,27 @@
                     alt="profile" />
                 </div>
                 <div class="mb-3">
-                    <label for="name">Name</label>
-                    <input 
-                      type="text"
-                      class="form-control" 
-                      id="name"  
-                      name="name" 
-                      placeholder="Enter your name" 
-                      required
-                      />
-                  </div>
+                  <label for="name">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required />
+                </div>
                 <div class="mb-3">
-                  <label for="email">Email (@noroff.no or @stud.noroff.no)</label>
-                  <input 
+                  <label for="email"
+                    >Email (@noroff.no or @stud.noroff.no)</label
+                  >
+                  <input
                     type="email"
-                    class="form-control" 
-                    id="email" 
+                    class="form-control"
+                    id="email"
                     name="email"
                     placeholder="Enter your email"
                     pattern=".+@(noroff\.no|stud\.noroff\.no)"
-                    required />                  
+                    required />
                 </div>
                 <div class="mb-3">
                   <label for="password">Password</label>
@@ -103,16 +83,15 @@
                     name="password"
                     placeholder="Enter your password"
                     required
-                    minlength="8" />                  
+                    minlength="8" />
                 </div>
                 <div class="text-center">
-                  <!-- <button type="submit" class="login" data-auth="login">Login</button>  -->                  
-                  <button type="submit" class="register btn-color btn px-5 mb-5 w-100" data-auth="register">Register</button>
-
-
-                  <!-- <button type="submit" id="register-submit" class="btn btn-color px-5 mb-5 w-100">
+                  <button
+                    type="submit"
+                    class="register btn-color btn px-5 mb-5 w-100"
+                    data-auth="register">
                     Register
-                  </button> -->
+                  </button>
                 </div>
                 <div
                   id="emailHelp"
@@ -126,6 +105,9 @@
         </div>
       </div>
     </main>
-    <footer class="bg-primary primary-color d-flex fixed-bottom justify-content-center p-3">&copy;Copyright 2024</footer>
+    <footer
+      class="bg-primary primary-color d-flex fixed-bottom justify-content-center p-3">
+      &copy;Copyright 2024
+    </footer>
   </body>
 </html>

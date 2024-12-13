@@ -1,7 +1,6 @@
 
 import { getPosts } from "../getPosts.js";
 import { login } from "../login.js";
-import { logOut } from "../logOut.js";
 import { register } from "../register.js";
 import { save } from "../save.js";
 
@@ -20,11 +19,11 @@ export async function onAuth(event) {
 
     if (event.submitter.dataset.auth === 'login') {
         await login(email, password);
-        window.location.replace('/profile/index.html');
+        window.location.replace('/feed/index.html');
     } else {
         await register(name, email, password);
         await login(email, password);
-        window.location.replace('/profile/index.html');
+        window.location.replace('/feed/index.html');
     }
 
     const posts = await getPosts();
@@ -39,4 +38,3 @@ export function setAuthListener() {
 
 setAuthListener();
 
-logOut();

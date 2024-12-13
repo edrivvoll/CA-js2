@@ -13,7 +13,7 @@
     <script
       src="https://kit.fontawesome.com/5e248e42c9.js"
       crossorigin="anonymous"></script>
-      <script src="js/login/main.js" type="module"></script>
+    <script src="js/login/main.js" type="module"></script>
   </head>
   <body>
     <header class="fixed-top">
@@ -31,30 +31,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/profile/"
-                  >Profile</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/feed/">Feed</a>
-              </li>
-              <li class="nav-item"></li>
-                <button type="submit" id="logout">Log Out</button>
-              </li>
-            </ul>
-
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search" />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
           </div>
         </div>
       </nav>
@@ -64,7 +41,10 @@
         <div class="row">
           <div class="col-md-6 offset-md-3">
             <div class="card my-5 shadow-lg rounded-4">
-              <form class="card-body cardbody-color p-lg-5 shadow-lg rounded-4" name="auth" action="/profile/index.html">
+              <form
+                class="card-body cardbody-color p-lg-5 shadow-lg rounded-4"
+                name="auth"
+                action="/profile/index.html">
                 <div class="text-center">
                   <img
                     src="/img/profile.jpg"
@@ -73,15 +53,17 @@
                     alt="profile" />
                 </div>
                 <div class="mb-3">
-                  <label for="email">Email (@noroff.no or @stud.noroff.no)</label>
-                  <input 
+                  <label for="email"
+                    >Email (@noroff.no or @stud.noroff.no)</label
+                  >
+                  <input
                     type="email"
-                    class="form-control" 
-                    id="email" 
+                    class="form-control"
+                    id="email"
                     name="email"
                     placeholder="Enter your email"
                     pattern=".+@(noroff\.no|stud\.noroff\.no)"
-                    required />                  
+                    required />
                 </div>
                 <div class="mb-3">
                   <label for="password">Password</label>
@@ -92,34 +74,23 @@
                     name="password"
                     placeholder="Enter your password"
                     required
-                    minlength="8" />                  
-                </div>
-                <!-- <div class="mb-3">
-                  <input type="email"class="form-control" id="email" required />
-                  <label for="email" class="form-label"
-                    >Email address</label
-                  >
-                </div> -->
-                <!-- <div class="mb-3">
-                  <input
-                    type="password"
-                    id="password"
-                    class="form-control"
-                    required
                     minlength="8" />
-                  <label class="form-label" for="form2Example2">Password</label>
-                </div> -->
+                </div>
                 <div class="text-center">
-                  <button type="submit" class="login btn btn-color px-5 mb-5 w-100" data-auth="login">Login</button>
-                  <!-- <button type="submit" id="login" class="btn btn-color px-5 mb-5 w-100">
+                  <button
+                    type="submit"
+                    class="login btn btn-color px-5 mb-5 w-100"
+                    data-auth="login">
                     Login
-                  </button> -->
+                  </button>
                 </div>
                 <div
                   id="emailHelp"
                   class="form-text text-center mb-5 text-dark">
                   Not Registered?
-                  <a href="/register.html" class="text-dark fw-bold"> Create an Account</a>
+                  <a href="/register.html" class="text-dark fw-bold"
+                    >Create an Account</a
+                  >
                 </div>
               </form>
             </div>
@@ -127,6 +98,9 @@
         </div>
       </div>
     </main>
-    <footer class="bg-primary primary-color d-flex fixed-bottom justify-content-center p-3">&copy;Copyright 2024</footer>
+    <footer
+      class="bg-primary primary-color d-flex fixed-bottom justify-content-center p-3">
+      &copy;Copyright 2024
+    </footer>
   </body>
 </html>
