@@ -4,15 +4,10 @@ import { renderPostsWithFilterImg } from "../js/renderPostsWithFilterImg.js";
 import { renderPostsWithFilterMyPosts } from "../js/renderPostsWithFilterMyPosts.js";
 import { renderPostsWithLoop } from "../js/renderPostsWithLoop.js";
 import { renderSearchFeed } from "../js/searchPostFeed.js";
-import { searchPosts } from "../js/searchPosts.js";
-// import { renderSearch } from "../js/searchPostsProfile.js";
-
 
 renderPostsWithLoop();
 
 logOut();
-
-// searchPosts();
 
 loadPost();
 
@@ -44,9 +39,7 @@ searchBtn2.addEventListener('click', (e) => {
     }   else {
         renderSearchFeed(searchInput2.value);
     }
-    
 });
-
 
 // Filter
 const noFilterItem = document.getElementById('no-filter');
@@ -55,19 +48,16 @@ const myPostsItem = document.getElementById('my-posts');
 
 noFilterItem.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log('No Filter selected!');
     renderPostsWithLoop();
 });
 
 withImgItem.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log('With image selected!');
     renderPostsWithFilterImg();
 });
 
 myPostsItem.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log('My Posts selected!');
     renderPostsWithFilterMyPosts();
 });
 // ---------------------

@@ -1,13 +1,5 @@
-export const apiBase = 'https://v2.api.noroff.dev';
-export const apiAuth = '/auth';
-export const apiReg = '/register';
-export const apiLogin = '/login';
-export const apiPosts = '/social/posts';
-export const apiKey = '4f3ee179-18e9-46f1-b721-844731846040';
-
-export function load(key) {
-    return JSON.parse(localStorage.getItem(key));
-}
+import { load } from "./load.js";
+import { apiBase, apiKey, apiPosts } from "./url.js";
 
 export async function createPost() {
     const token = load('token');
@@ -64,6 +56,3 @@ export function loadPost() {
         });
     }
 }
-
-
-// loadPost();

@@ -16,11 +16,3 @@ export async function apiCall(url, option) {
 
     return await response.json();
 }
-
-/* {
-        headers: {
-            'Content-type': 'application/json',
-            Authorization: `Bearer ${token}`,
-            "X-Noroff-API-Key": `${apiKey}`,
-        }
-    } */

@@ -1,4 +1,3 @@
-// import { id } from "../profile/singlePost.js";
 import { load } from "./load.js";
 import { apiBase, apiKey, apiPosts } from "./url.js";
 

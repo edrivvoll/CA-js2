@@ -1,3 +1,6 @@
+
+// Not In Use Function -------------------------
+
 export function searchPosts() {
 
     document.addEventListener('DOMContentLoaded', () => {

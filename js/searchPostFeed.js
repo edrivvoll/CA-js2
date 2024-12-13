@@ -17,26 +17,11 @@ const option = {
 export async function renderSearchFeed(searchInput) {
 
     const url = `${apiBase}${apiPosts}/search?q=${searchInput}&_author=true`;
-    console.log(url)
-    // 'https://v2.api.noroff.dev/social/posts/search?q=gdrh&_author=true'
     async function renderPostsWithFilterMyPostsV2() {
         const posts = await apiCall(url , option);
         const postContainer = document.getElementById('post-container');
         const postArray = posts.data;
         const userEmail = load('useremail');
-        console.log(postArray)
-             
-        
-       /*  const filteredPostArray = postArray.filter((array) => {
-            if (array.author.email === userEmail) {
-                return true;
-            }   else  {
-                return false;
-            }
-        })  */
-        
-       
-
 
         // Clear the container
         postContainer.innerHTML = '';
@@ -83,7 +68,6 @@ export async function renderSearchFeed(searchInput) {
                     alert('Post Deleted!');
                     window.location.reload();
                 });
-                
                 
                 buttonContainer.appendChild(buttonEdit);
                 buttonContainer.appendChild(buttonDelete);

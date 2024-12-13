@@ -1,4 +1,4 @@
-import { load } from "../js/createPost.js";
+import { load } from "../js/load.js";
 import { getPostsSingle } from "../js/getPostsSingle.js";
 import { apiBase, apiKey, apiPosts } from "../js/url.js";
 

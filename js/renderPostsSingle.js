@@ -3,8 +3,7 @@ import { getPostsSingle } from "./getPostsSingle.js";
 export async function renderPostsSingle() {
     const posts = await getPostsSingle();
     const postArray = posts.data;
-    console.log(postArray)
-    
+   
     const container = document.querySelector('#signgle-post-container');
     container.innerHTML = '';
     

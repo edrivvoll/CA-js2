@@ -1,9 +1,7 @@
 import { apiCall } from "./apiCall.js";
 import { deletePost } from "./deletePost.js";
-import { getPosts } from "./getPosts.js";
 import { load } from "./load.js";
-import { apiAuthor, apiBase, apiKey, apiPosts } from "./url.js";
-
+import { apiBase, apiKey, apiPosts } from "./url.js";
 
 const token = load('token');
 const option = {
@@ -17,15 +15,11 @@ const option = {
 export async function renderSearchProfile(searchInput) {
 
     const url = `${apiBase}${apiPosts}/search?q=${searchInput}&_author=true`;
-    console.log(url)
-    // 'https://v2.api.noroff.dev/social/posts/search?q=gdrh&_author=true'
     async function renderPostsWithFilterMyPostsV2() {
         const posts = await apiCall(url , option);
         const postContainer = document.getElementById('post-container');
         const postArray = posts.data;
         const userEmail = load('useremail');
-        console.log(postArray)
-             
         
         const filteredPostArray = postArray.filter((array) => {
             if (array.author.email === userEmail) {
@@ -34,9 +28,6 @@ export async function renderSearchProfile(searchInput) {
                 return false;
             }
         }) 
-        
-       
-
 
         // Clear the container
         postContainer.innerHTML = '';
@@ -83,7 +74,6 @@ export async function renderSearchProfile(searchInput) {
                     alert('Post Deleted!');
                     window.location.reload();
                 });
-                
                 
                 buttonContainer.appendChild(buttonEdit);
                 buttonContainer.appendChild(buttonDelete);
