@@ -11,27 +11,13 @@ logOut();
 
 loadPost();
 
-// Search
-const searchBtn = document.getElementById('search-btn');
-const searchInput = document.querySelector('#search-input');
-
 const url = '';
 
+// search bar
+const searchBtn = document.getElementById('search-btn');
+const searchInput2 = document.querySelector('#search-input');
+
 searchBtn.addEventListener('click', (e) => {
-    e.preventDefault(); 
-    console.log(searchInput.value);
-    if (searchInput.value === '') {
-        renderPostsWithLoop();
-    }   else {
-        renderSearchFeed(searchInput.value);
-    }
-});
-
-// 2nd search bar
-const searchBtn2 = document.getElementById('search-btn2');
-const searchInput2 = document.querySelector('#search-input2');
-
-searchBtn2.addEventListener('click', (e) => {
     e.preventDefault(); 
     console.log(searchInput2.value);
     if (searchInput2.value === '') {
