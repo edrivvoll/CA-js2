@@ -1,5 +1,18 @@
 import { load } from "./load.js";
-import { apiAuthor, apiBase, apiKey, apiPosts } from "./url.js";
+
+/**
+ * This is a reuseable function to make different types of api calls.
+ * @param {string} url This is the url for the api call.
+ * @param {object} option This is the header in your api call.
+ * @returns The api response.
+ * @example
+ * ```
+ * // Use this to access posts.
+ * const posts = await apiCall(url , option);
+ * const postArray = posts.data;
+ * // Returns posts array.
+ * ```
+ */
 
 export async function apiCall(url, option) {
     const token = load('token');
@@ -16,3 +29,5 @@ export async function apiCall(url, option) {
 
     return await response.json();
 }
+
+
