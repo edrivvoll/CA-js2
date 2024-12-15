@@ -17,7 +17,6 @@ const url = '';
 
 searchBtn.addEventListener('click', (e) => {
     e.preventDefault(); 
-    console.log(searchInput.value);
     if (searchInput.value === '') {
         renderPostsWithFilterMyPosts();
     }   else {

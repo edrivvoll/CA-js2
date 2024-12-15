@@ -1,8 +1,7 @@
 import { apiCall } from "./apiCall.js";
 import { deletePost } from "./deletePost.js";
-import { getPosts } from "./getPosts.js";
 import { load } from "./load.js";
-import { apiAuthor, apiBase, apiKey, apiPosts } from "./url.js";
+import { apiBase, apiKey, apiPosts } from "./url.js";
 
 
 const token = load('token');

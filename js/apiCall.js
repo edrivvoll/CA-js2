@@ -21,7 +21,6 @@ export async function apiCall(url, option) {
     const response = await fetch(url, option); {
         option;
     }
-    console.log(response)
     if (!response.ok) {
         const error = await response.json();
         throw new Error(error.message || 'Could not fetch posts');

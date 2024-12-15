@@ -4,7 +4,6 @@ import { apiBase, apiKey, apiPosts } from "../js/url.js";
 
 const posts = await getPostsSingle();
 const postArray = posts.data || {};
-console.log(postArray.title, postArray.body, postArray.media?.url, postArray.media?.alt, postArray.id);
 
 document.querySelector('#title').value = postArray.title || '';
 document.querySelector('#body').value = postArray.body || '';

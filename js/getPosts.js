@@ -11,7 +11,6 @@ export async function getPosts() {
             "X-Noroff-API-Key": `${apiKey}`,
         }
     });
-    console.log(response)
     if (!response.ok) {
         const error = await response.json();
         throw new Error(error.message || 'Could not fetch posts');

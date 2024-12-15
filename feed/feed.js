@@ -19,7 +19,6 @@ const searchInput2 = document.querySelector('#search-input');
 
 searchBtn.addEventListener('click', (e) => {
     e.preventDefault(); 
-    console.log(searchInput2.value);
     if (searchInput2.value === '') {
         renderPostsWithLoop();
     }   else {

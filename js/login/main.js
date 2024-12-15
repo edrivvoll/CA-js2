@@ -27,7 +27,6 @@ export async function onAuth(event) {
     }
 
     const posts = await getPosts();
-    console.log(posts);
 }
 
 export function setAuthListener() {

@@ -6,7 +6,6 @@ export async function renderPostsWithLoop() {
     const posts = await getPosts();
     const postContainer = document.getElementById('post-container');
     const postArray = posts.data;
-    console.log(postArray);
     const userEmail = load('useremail');
 
 
