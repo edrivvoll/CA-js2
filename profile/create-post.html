@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Post | SoMe</title>
+    <link rel="stylesheet" href="../src/scss/index.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+      defer></script>
+    <script
+      src="https://kit.fontawesome.com/5e248e42c9.js"
+      crossorigin="anonymous"></script>
+      <script src="../js/createPostIndex.js" type="module"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../feed/index.html">SoMe</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/profile/"
+                  >Profile</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/feed/">Feed</a>
+              </li>
+              <li class="nav-item"></li>
+                <button type="submit" id="logout">Log Out</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container py-5">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col col-md-9 col-lg-7 col-xl-9"> 
+            <div class="card rounded-4">
+              <div class="card-body p-4">
+                <div class="d-flex flex-column flex-md-row">
+                  <div class="">
+                    <i class="bi bi-person-square card-img-top p-4"></i>
+                  </div>
+                  <div class="flex-grow-1 ms-3">
+                    <h5 class="mb-1">John Doe</h5>
+                    <p class="mb-2 pb-1" >Senior Supervisor</p>
+                    <div class="d-flex justify-content-start rounded-3 p-2 mb-2 bg-color-follow">
+                      <div>
+                        <p class="small text-muted mb-1">Posts</p>
+                        <p class="mb-0">41</p>
+                      </div>
+                      <div class="px-3">
+                        <p class="small text-muted mb-1">Followers</p>
+                        <p class="mb-0">976</p>
+                      </div>
+                      <div>
+                        <p class="small text-muted mb-1">Following</p>
+                        <p class="mb-0">873</p>
+                      </div>
+                    </div>
+                    <div class="d-flex pt-1">
+                      <button type="button" id="go-to-create-post" class="btn btn-outline-primary me-1 flex-grow-1">Create Post</button>
+                      <button type="button" class="btn btn-primary flex-grow-1">Follow</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+      <!-- Post section -->
+      <div class="container py-5">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col col-md-9 col-lg-7 col-xl-9"> 
+            <div class="card rounded-4">
+              <div class="card-body p-4">
+                <div class="d-flex flex-column flex-md-row">
+                  <div class="container p-4">
+                    <h2>Recent posts:</h2>
+                    <div class="row post-container">
+                        <h1>Create a Post</h1>
+                        <form id="createPostForm">
+                            <!-- Title -->
+                            <label for="title">Title: </label>
+                            <input type="text" id="title" name="title" placeholder="Enter the post title" required>
+                            <br>
+                            <!-- Body -->
+                            <label for="body">Body: </label>
+                            <textarea id="body" name="body" rows="5" placeholder="Enter the post body"></textarea>
+                            <br>
+                            <!-- Media URL -->
+                            <label for="mediaUrl">Media URL: </label>
+                            <input type="url" id="media-url" name="mediaUrl" placeholder="Enter the media URL">
+                            <br>
+                            <!-- Media Alt Text -->
+                            <label for="mediaAlt">Media Alt Text: </label>
+                            <input type="text" id="media-alt" name="mediaAlt" placeholder="Enter alt text for the media">
+                            <br>
+                            <!-- Submit Button -->
+                            <button type="submit" id="create-post">Create Post</button>
+                        </form>
+                    </div>
+                  </div>  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+      <!-- Following / Followers section -->
+      <div class="d-flex flex-column flex-xl-row">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-md-9 col-lg-7 col-xl-9">
+              <div class="card rounded-4">
+                <div class="card-body p-4">
+                  <div class="d-flex">
+                    <h5>Following</h5>
+                  </div>
+                  <div class="card">
+                    <div class="card-body">
+                      User 1
+                    </div>
+                  </div><div class="card">
+                    <div class="card-body">
+                      User 2
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-body">
+                      User 3
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-body">
+                      User 4
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-body">
+                      User 5
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-md-9 col-lg-7 col-xl-9">
+              <div class="card rounded-4">
+                <div class="card-body p-4">
+                  <div class="d-flex">
+                    <h5>Followers</h5>
+                  </div>
+                  <div class="card">
+                    <div class="card-body">
+                      User 1
+                    </div>
+                  </div><div class="card">
+                    <div class="card-body">
+                      User 2
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-body">
+                      User 3
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-body">
+                      User 4
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-body">
+                      User 5
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-primary primary-color d-flex fixed-bottom justify-content-center p-3 ">&copy;Copyright 2024</footer>
+  </body>
+</html>

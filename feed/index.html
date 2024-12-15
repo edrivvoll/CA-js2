@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feed | SoMe</title>
+    <link rel="stylesheet" href="../src/scss/index.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+      defer></script>
+    <script
+      src="https://kit.fontawesome.com/5e248e42c9.js"
+      crossorigin="anonymous"></script>
+      <script src="/feed/feed.js" type="module"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../feed/index.html">SoMe</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="/profile/"
+                  >Profile</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/feed/">Feed</a>
+              </li>
+              <li class="nav-item"></li>
+                <button type="submit" id="logout">Log Out</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+        <div class="container py-3 ">
+          <div class="row d-flex justify-content-center">
+            <div class="col col-sm-10 col-md-8 col-lg-6 col-xl-5">
+              <form class="d-flex" role="search">
+                  <input
+                  id="search-input"
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search" />
+                  <button class="btn btn-primary" type="submit" id="search-btn">
+                  Search
+                  </button>
+                  <div class="dropdown"></div>
+                  <button class="btn btn-secondary dropdown-toggle mx-2" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                    Filter:
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" id="no-filter" href="#">No Filter</a></li>
+                    <li><a class="dropdown-item" id="img" href="#">With image</a></li>
+                    <li><a class="dropdown-item" id="my-posts" href="#">My Posts</a></li>                                      
+                  </ul>
+                </div>
+              </form>   
+            </div>    
+          </div>
+        </div>
+        <!-- Create post section -->
+        <div class="container py-3">
+          <H2>Create post:</H2>
+          <form id="createPostForm">    		    
+    		    <div class="form-group">
+    		        <label for="title">Title <span class="require">*</span></label>
+    		        <input type="text" id="title" name="title" class="form-control" name="title" />
+    		    </div>    		    
+    		    <div class="form-group">
+    		        <label for="description">Description</label>
+    		        <textarea id="body" name="body" rows="5" class="form-control" name="description" ></textarea>
+    		    </div>
+            <div class="form-group">
+              <label for="title">Media URL </label>
+              <input type="url" id="media-url" name="mediaUrl" class="form-control" name="title" />
+            </div>
+            <div class="form-group">
+              <label for="title">Media Alt Text </label>
+              <input type="text" id="media-alt" name="mediaAlt" class="form-control" name="title" />
+            </div>    		    
+    		    <div class="form-group">
+    		        <p><span class="require">*</span> = required fields</p>
+    		    </div>    		    
+    		    <div class="form-group">
+    		        <button type="submit" id="create-post" class="btn btn-primary">
+    		            Create
+    		        </button>
+    		    </div>
+    		  </form>
+        </div>
+        <!-- Posts section -->
+        <div class="container p-4">
+          <h2>Recent posts:</h2>
+          <div class="row" id="post-container">
+        </div>
+    </main>
+    <footer class="bg-primary primary-color d-flex fixed-bottom justify-content-center p-3 ">&copy;Copyright 2024</footer>
+  </body>
+</html>
