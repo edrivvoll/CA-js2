@@ -1,2 +1,4 @@
 # CA-js2
  
+Planning
+I used Trello for planning this project. Here is a link to the Trello board <a link="https://trello.com/invite/b/675f21429ff6ac8852487347/ATTI53163b93fca9cba02b47657fb76325ab69913856/js2">Trello board</a>
